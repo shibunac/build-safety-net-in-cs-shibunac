@@ -31,17 +31,17 @@ public class SoundexTests
     }
 
     [Fact]
-    public static RunTests()
+    public static RunTests(Test)
     {
-        var result = Soundex.GenerateSoundex(Name);
-        Assert.Equal(result, SoundexCode)
-        if(result == SoundexCode)
+        var result = Soundex.GenerateSoundex(Test.Name);
+        Assert.Equal(result, Test.SoundexCode)
+        if(result == Test.SoundexCode)
         {
-            Console.WriteLine("{TestCaseName} : Success");
+            Console.WriteLine("{Test.TestCaseName} : Success");
         }
         else
         {
-            console.WriteLine("{TestCaseName} : Failed, Expected: {SoundexCode}");
+            console.WriteLine("{Test.TestCaseName} : Failed, Expected: {Test.SoundexCode}");
         }
     }
     
