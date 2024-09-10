@@ -6,6 +6,7 @@ public class SoundexTests
     public static string Name;
     public static string SoundexCode;
 
+    [Fact]
     public static Test(string testcaseName, string inputName, string soundexCode)
     {
         TestCaseName = testcaseName
@@ -13,6 +14,7 @@ public class SoundexTests
         SoundexCode = soundexCode;
     }
 
+    [Fact]
     public static TestCaseScenario()
     {
         var testCaseList = new List<Test>
