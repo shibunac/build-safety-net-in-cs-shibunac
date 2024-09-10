@@ -2,17 +2,45 @@ using Xunit;
 
 public class SoundexTests
 {
-    [Fact]
-    public void HandlesEmptyString()
+    public static string TestCaseName
+    public static string Name;
+    public static string Code;
+
+    public static Test(string testcaseName, string inputName, string soundexCode)
     {
-        Assert.Equal(string.Empty, Soundex.GenerateSoundex(""));
+        TestCaseName = testcaseName
+        Name = inputName;
+        Code = soundexCode;
+    }
+
+    public static TestCaseScenario()
+    {
+        var testCaseList = new List<Test>
+        {
+            new Test("Test - Empty String" , "", "");
+            new Test("Test - Single Character", "A", "A000");
+        };
+
+        foreach(var test in Test)
+        {
+            RunTests(test)
+        }
     }
 
     [Fact]
-    public void HandlesSingleCharacter()
+    public static RunTests()
     {
-        Assert.Equal("A000", Soundex.GenerateSoundex("A"));
+        var result = Soundex.GenerateSoundex(Name);
+        Assert.Equal(result, Code)
+        if(result == Code)
+        {
+            Console.WriteLine("{TestCaseName} : Success");
+        }
+        else
+        {
+            console.WriteLine("{TestCaseName} : Failed, Expected: {Code}");
+        }
     }
-
+    
    
 }
