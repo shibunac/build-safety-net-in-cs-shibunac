@@ -48,7 +48,7 @@ public class Soundex
     private static char GetSoundexCode(char alphabet)
     {
         // Define a lookup table string where each position represents a letter from 'A' to 'Z'
-        const string alphabetLookup = "1111112222230001222110001222110000";
+        const string alphabetLookup = "012301200224550012623010202";
 
         // Convert character to uppercase
         alphabet = char.ToUpper(alphabet);
