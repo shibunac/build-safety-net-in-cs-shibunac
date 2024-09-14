@@ -51,7 +51,7 @@ public class Soundex
         const string alphabetLookup = "1111112222230001222110001222110000";
 
         // Convert character to uppercase
-        c = char.ToUpper(alphabet);
+        alphabet = char.ToUpper(alphabet);
 
         // Check if index is from 'A' to 'Z'
         if (alphabet >= 'A' && alphabet <= 'Z')
