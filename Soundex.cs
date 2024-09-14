@@ -15,7 +15,7 @@ public class Soundex
         char prevCode = GetSoundexCode(name[0]);
 
         AppendCodes(name, soundex, prevCode);
-        AppendZero(soundex, 4);
+        AppendZeroes(soundex, 4);
 
         return soundex.ToString();
     }
@@ -33,7 +33,7 @@ public class Soundex
         }
     }
 
-    private static void AppendZero(StringBuilder soundex, int length)
+    private static void AppendZeroes(StringBuilder soundex, int length)
     {
         while (soundex.Length < length)
         {
@@ -41,37 +41,23 @@ public class Soundex
         }
     }
     
-    private static char GetSoundexCode(char c)
+    private static char GetSoundexCode(char alphabet)
     {
-        c = char.ToUpper(c);
-        switch (c)
+        // Define a lookup table string where each position represents a letter from 'A' to 'Z'
+        const string soundexLookup = "1111112222230001222110001222110000";
+
+        // Convert character to uppercase
+        c = char.ToUpper(alphabet);
+
+        // Check if index is from 'A' to 'Z'
+        if (alphabet >= 'A' && alphabet <= 'Z')
         {
-            case 'B':
-            case 'F':
-            case 'P':
-            case 'V':
-                return '1';
-            case 'C':
-            case 'G':
-            case 'J':
-            case 'K':
-            case 'Q':
-            case 'S':
-            case 'X':
-            case 'Z':
-                return '2';
-            case 'D':
-            case 'T':
-                return '3';
-            case 'L':
-                return '4';
-            case 'M':
-            case 'N':
-                return '5';
-            case 'R':
-                return '6';
-            default:
-                return '0'; // For A, E, I, O, U, H, W, Y
+            // Calculate the index (0 for 'A', 1 for'B'... 25 for 'Z')
+            int alphabetIndex = alphabet - 'A';
+
+            // return the Soundex code based on caculated index
+            return soundexLookup[alphabetIndex];
         }
+        return 0; // for characters outside alphabets
     }
 }
