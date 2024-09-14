@@ -62,6 +62,6 @@ public class Soundex
             // return the Soundex code based on caculated index
             return alphabetLookup[alphabetIndex];
         }
-        return 0; // for characters outside alphabets
+        return '0'; // for characters outside alphabets
     }
 }
