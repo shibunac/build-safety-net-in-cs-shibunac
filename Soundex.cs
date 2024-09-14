@@ -28,7 +28,7 @@ public class Soundex
         }
     }
 
-    private static isValidToAppend(StringBuilder soundex, char code, char prevCode)
+    private static void isValidToAppend(StringBuilder soundex, char code, char prevCode)
     {
         if (code != '0' && code != prevCode)
             {
