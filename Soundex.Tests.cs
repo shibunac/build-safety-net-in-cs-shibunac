@@ -2,7 +2,7 @@ using Xunit;
 
 public class SoundexTests
 {
-    public static string TestCaseName
+    public static string TestCaseName;
     public static string Name;
     public static string SoundexCode;
 
@@ -19,11 +19,11 @@ public class SoundexTests
     {
         var testCaseList = new List<Test>
         {
-            new Test("Testing - Empty String" , "", "");
-            new Test("Testing - Single Character", "A", "A000");
-            new Test("Testing - Multiple Characters", "TOM", "T500");
-            new Test("Testing - Numbers", "1234", "1000");
-            new Test("Testing - Special Characters", "$#@&", "$000");
+            new Test("Testing - Empty String" , "", ""),
+            new Test("Testing - Single Character", "A", "A000"),
+            new Test("Testing - Multiple Characters", "TOM", "T500"),
+            new Test("Testing - Numbers", "1234", "1000"),
+            new Test("Testing - Special Characters", "$#@&", "$000")
         };
 
         foreach(var test in Test)
