@@ -24,12 +24,11 @@ public class Soundex
         for (int i = 1; i < name.Length && soundex.Length < 4; i++)
         {
             char code = GetSoundexCode(name[i]);
-            isValidCheckAndAccept(soundex, code, prevCode)
-            
+            isValidToAppend(soundex, code, prevCode);
         }
     }
 
-    private static isValidCheck(StringBuilder soundex, char code, char prevCode)
+    private static isValidToAppend(StringBuilder soundex, char code, char prevCode)
     {
         if (code != '0' && code != prevCode)
             {
@@ -49,7 +48,7 @@ public class Soundex
     private static char GetSoundexCode(char alphabet)
     {
         // Define a lookup table string where each position represents a letter from 'A' to 'Z'
-        const string soundexLookup = "1111112222230001222110001222110000";
+        const string alphabetLookup = "1111112222230001222110001222110000";
 
         // Convert character to uppercase
         c = char.ToUpper(alphabet);
@@ -61,7 +60,7 @@ public class Soundex
             int alphabetIndex = alphabet - 'A';
 
             // return the Soundex code based on caculated index
-            return soundexLookup[alphabetIndex];
+            return alphabetLookup[alphabetIndex];
         }
         return 0; // for characters outside alphabets
     }
