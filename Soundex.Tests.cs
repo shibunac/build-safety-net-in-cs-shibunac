@@ -9,7 +9,7 @@ public class SoundexTests
     [Fact]
     public static Test(string testcaseName, string inputName, string soundexCode)
     {
-        TestCaseName = testcaseName
+        TestCaseName = testcaseName;
         Name = inputName;
         SoundexCode = soundexCode;
     }
@@ -28,7 +28,7 @@ public class SoundexTests
 
         foreach(var test in Test)
         {
-            RunTests(test)
+            RunTests(test);
         }
     }
 
@@ -36,7 +36,7 @@ public class SoundexTests
     public static RunTests(Test)
     {
         var result = Soundex.GenerateSoundex(Test.Name);
-        Assert.Equal(result, Test.SoundexCode)
+        Assert.Equal(result, Test.SoundexCode);
         if(result == Test.SoundexCode)
         {
             Console.WriteLine("{Test.TestCaseName} : Success");
